@@ -26,13 +26,13 @@ $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : '';
 include "store-answer.php";
 
 // Specify the question text to be displayed on this page
-$question_text = "!!!NEED TO ADD 10 or MORE QUESTIONS!!!";
+$question_text = "Q1. Do you think you understand the feelings and experiences of people from different racial backgrounds?";
 
 // Use the question text and the user id to create a form for this question that will take us to the next question OR the results page, whichever should come next:
 
 ?>
 
-<form method="post" action="results.php">
+<form method="post" action="Q2.php">
     <?php echo '<h1>'.$question_text.'</h1>'; ?>
     <?php echo '<p><input type="hidden" name="user_id" value="'.$user_id.'" /></p>'; ?>
     <?php echo '<p><input type="hidden" name="question" value="'.$question_text.'" /></p>'; ?>

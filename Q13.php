@@ -26,13 +26,13 @@ $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : '';
 include "store-answer.php";
 
 // Specify the question text to be displayed on this page
-$question_text = "Q6. Do you think that there are enough resources available to support people of color and women in their pursuit of education and career goals?";
+$question_text = "Q13. Do you believe that tech companies are investing enough in research and development to address issues of racial and gender inequality in technology?";
 
 // Use the question text and the user id to create a form for this question that will take us to the next question OR the results page, whichever should come next:
 
 ?>
 
-<form method="post" action="Q7.php">
+<form method="post" action="Q14.php">
     <?php echo '<h1>'.$question_text.'</h1>'; ?>
     <?php echo '<p><input type="hidden" name="user_id" value="'.$user_id.'" /></p>'; ?>
     <?php echo '<p><input type="hidden" name="question" value="'.$question_text.'" /></p>'; ?>
