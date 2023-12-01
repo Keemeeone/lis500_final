@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Perceptions of the Harvard Implicit Bias test | LIS 500 Assignment 4</title>
-    <!-- Update my style sheet -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Import the Google Fonts: -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,6 +12,23 @@
         rel="stylesheet">
 
 </head>
+<body>
+	<div class="navbar">
+  		<a href="index.php">Home</a>
+  		<a href="analysis.php">Analysis</a>
+  		<div class="dropdown">
+    		<button class="dropbtn">Individual Essay 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="heewon.php">Heewon Kim</a>
+              <a href="fara.php">Nurfara Amirah Mohd Faisal</a>
+              <a href="tiya.php">SATIYA SAMLAL</a>
+              <a href="hongfei.php">HONGFEI ZHANG</a>
+            </div>
+         </div> 
+    </div>
+<div class="container">
 <?php
 
 // Created by: Reginold Royston and Mariah Knowles
@@ -67,5 +84,4 @@ $question_text = "Q1. Do you think you understand the feelings and experiences o
 	All Rights Reserved
 </footer>
 </body>
-
 </html>

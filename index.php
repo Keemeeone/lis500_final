@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- NEED TO ADD STYLES HERE -->
-        
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Survey</title>
     <!-- Refference: https://stackoverflow.com/questions/6320113/how-to-prevent-form-resubmission-when-page-is-refreshed-f5-ctrlr -->
     <script>
         if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
-    }
+    	}
     </script>
 </head>
 <?php
@@ -61,16 +61,30 @@ $user_id = checkDuplicates($user_id, $results);
 ?>
 
 <body>
-
+	<div class="navbar">
+  		<a href="index.php">Home</a>
+  		<a href="analysis.php">Analysis</a>
+  		<div class="dropdown">
+    		<button class="dropbtn">Individual Essay 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="heewon.php">Heewon Kim</a>
+              <a href="fara.php">Nurfara Amirah Mohd Faisal</a>
+              <a href="tiya.php">SATIYA SAMLAL</a>
+              <a href="hongfei.php">HONGFEI ZHANG</a>
+            </div>
+         </div> 
+     </div>
     <!-- Main content container -->
     <div class="container">
         <!-- Welcome -->
         <h1>Welcome to this survey on Race and Gender in the Technology Industry!</h1>
         <!-- Explanation about Survey -->
-        <p>We invite you to participate in this survey to gather valuable insights 
+        <h3>We invite you to participate in this survey to gather valuable insights 
             into your perspectives on race and gender representation in the tech industry. 
             Your responses will help us understand how individuals perceive and 
-            experience these issues in the tech sector.</p>
+            experience these issues in the tech sector.</h3>
         <!-- What survey is covered -->
         <h3>The survey covers three main areas:</h3>
         <!-- List of survey areas -->

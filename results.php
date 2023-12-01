@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Perceptions of the Harvard Implicit Bias test | LIS 500 Assignment 4</title>
-    <link rel="stylesheet" type="text/css" href="resultStyle.css">
+    <link rel="stylesheet" type="text/css" href="resultStyles.css">
 
     <!-- Import the Google Fonts: -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1> Results for our Shared Survey</h1>
+    <h1>🎉 Results 🎉</h1>
 
     <p>Below you will the results for all questions displayed in their Likert numerals and an average of all current
         test takers.
@@ -72,12 +72,16 @@ $query->bind_param("i", $user_id);
 $query->execute();
 $results = $query->get_result();
 
-// Loop through and display the results
-echo '<p><i><u>Your results:</u> </i></p>';
-while ($result = $results->fetch_assoc()){
-    echo '<p><b>'.$result["question"].':</b> '.$result["answer"].'</p>';
-}
+echo '<div class="result-container">';
 
+// User's results
+echo '<div class="result-box">';
+echo '<p><i><u>Your results:</u></i></p>';
+while ($result = $results->fetch_assoc()) {
+	echo '<p><b>' . $result["question"] . ':</b> ' . $result["answer"] . '</p>';
+}
+echo '</div>';
+        
 // Close the query
 $query->close();
 
@@ -88,11 +92,16 @@ $query = $conn->prepare("SELECT question, avg(answer) as answer FROM Final_Surve
 $query->execute();
 $results = $query->get_result();
 
-// Loop through and display the results
+// Average results
+echo '<div class="result-box">';
 echo '<p><i><u>Average results:</u></i></p>';
-while ($result = $results->fetch_assoc()){
-	echo '<p><b>'.$result["question"].':</b> '.$result["answer"].'</p>';
+while ($result = $results->fetch_assoc()) {
+	echo '<p><b>' . $result["question"] . ':</b> ' . $result["answer"] . '</p>';
 }
+echo '</div>';
+
+echo '</div>';
+
 
 // Close the query
 $query->close();
