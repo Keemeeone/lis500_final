@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Perceptions of the Harvard Implicit Bias test | LIS 500 Assignment 4</title>
-    <link rel="stylesheet" type="text/css" href="resultStyle.css">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Import the Google Fonts: -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,28 +14,34 @@
 </head>
 
 <body>
-    <h1> Results for our Shared Survey</h1>
+    <div class="card">
+        <div class="container">
+            <h1> Results for our Shared Survey</h1>
 
-    <p>Below you will the results for all questions displayed in their Likert numerals and an average of all current
-        test takers.
-        <br>Since no personal IP address data is taken in this form, if you take again the average will shift. <br>This is nothing like a statistically accurate survey, but it is a good model for your final projects.
-    </p>
+            <p>Below you will the results for all questions displayed in their Likert numerals and an average of all current
+                test takers.
+                <br>Since no personal IP address data is taken in this form, if you take again the average will shift. <br>This is nothing like a statistically accurate survey, but it is a good model for your final projects.
+            </p>
 
-    <h2> As a reminder, here's your Likert scale:</h2>
-    <ul>
-        <li> 5 - I Strongly Agree </li>
-        <li> 4 - I Agree </li>
-        <li> 3 - Neutral </li>
-        <li> 2 - I Disagree </li>
-        <li> 1 - I Strongly Disagree </li>
-    </ul>
+            <h2> As a reminder, here's your Likert scale:</h2>
+            <ul>
+                <li> 5 - I Strongly Agree </li>
+                <li> 4 - I Agree </li>
+                <li> 3 - Neutral </li>
+                <li> 2 - I Disagree </li>
+                <li> 1 - I Strongly Disagree </li>
+            </ul>
+        </div>  
+    </div>    
 </body>
+
+<!-- TODO: add styling to this result section -->
 <?php
 
 // Created by: Reginold Royston and Mariah Knowles
 // Based on:
-// Last Modified on: Oct 28, 2021
-// Last Modified by: Reginold Royston
+// Last Modified on: Nov 30, 2023
+// Last Modified by: Fara Faisal
 // This is a results page for database queries using PHP forms //
 
 
@@ -103,19 +109,23 @@ $conn->close();
 ?>
 
 <body>
-    <h1>!!!NEED TO EDIT HERE AND ADD ANALYSIS PAGES!!!</h1>
-    <h2>This results page shows averages. Here are some important questions to ask now: </h2>
+    <div class="card">
+        <div class="container">
+            <h1>!!!NEED TO EDIT HERE AND ADD ANALYSIS PAGES!!!</h1>
+            <h2>This results page shows averages. Here are some important questions to ask now: </h2>
 
-    <ul>
-        <li>What does this data mean? </li>
-        <li>What does that tell you? </li>
-        <li>Is this the best way to display results? </li>
-        <li>How can we display this information more usefully? </li>
-    </ul>
-    <h3>We'll tackle this in Assignment # 5 </h3>
+            <ul>
+                <li>What does this data mean? </li>
+                <li>What does that tell you? </li>
+                <li>Is this the best way to display results? </li>
+                <li>How can we display this information more usefully? </li>
+            </ul>
+            <h3>We'll tackle this in Assignment # 5 </h3>
 
-    </p>
-    <form action="index.php">
-        <input type="submit"  value="Back to Home!">
-    </form>
+            </p>
+            <form action="index.php">
+                <input type="submit"  value="Back to Home!">
+            </form>
+        </div>
+    </div>
 </body>
