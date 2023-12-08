@@ -61,6 +61,7 @@ $user_id = checkDuplicates($user_id, $results);
 ?>
 
 <body>
+    <!-- Navigation bar -->
 	<div class="navbar">
   		<a href="index.php">Home</a>
   		<a href="analysis.php">Analysis</a>
@@ -71,8 +72,8 @@ $user_id = checkDuplicates($user_id, $results);
             <div class="dropdown-content">
               <a href="heewon.php">Heewon Kim</a>
               <a href="fara.php">Nurfara Amirah Mohd Faisal</a>
-              <a href="tiya.php">SATIYA SAMLAL</a>
-              <a href="hongfei.php">HONGFEI ZHANG</a>
+              <a href="tiya.php">Satiya Samlal</a>
+              <a href="hongfei.php">Hongfei Zhang</a>
             </div>
          </div> 
      </div>
@@ -81,38 +82,41 @@ $user_id = checkDuplicates($user_id, $results);
         <!-- Welcome -->
         <h1>Welcome to this survey on Race and Gender in the Technology Industry!</h1>
         <!-- Explanation about Survey -->
-        <h3>We invite you to participate in this survey to gather valuable insights 
+        <h2>We invite you to participate in this survey to gather valuable insights 
             into your perspectives on race and gender representation in the tech industry. 
             Your responses will help us understand how individuals perceive and 
-            experience these issues in the tech sector.</h3>
+            experience these issues in the tech sector.</h2>
         <!-- What survey is covered -->
-        <h3>The survey covers three main areas:</h3>
+        <h2>The survey covers three main areas:</h2>
         <!-- List of survey areas -->
         <ul>
             <li>
-                <h4>Understanding Race:
-                    This section delves into your understanding of racial diversity and equality in society,
-                    particularly within the context of the tech industry.
-                    Your responses will aid in assessing your comprehension of racial
-                    experiences and your perception of fairness and equity in the tech realm.
-                </h4>
+                <h3>Understanding Race:</h3>
+                    <h4>
+                        This section delves into your understanding of racial diversity and equality in society,
+                        particularly within the context of the tech industry.
+                        Your responses will aid in assessing your comprehension of racial
+                        experiences and your perception of fairness and equity in the tech realm.
+                    </h4>
             </li>
             <li>
-                <h4>Understanding Gender:
-                    This section focuses on your perspectives on gender equality and representation in society,
-                    with a particular emphasis on the tech industry. Your responses will help us
-                    gauge your assessment of gender balance in leadership roles, pay equity,
-                    and support systems for women and people of color.
-                </h4>
+                <h3>Understanding Gender:</h3>
+                    <h4> 
+                        This section focuses on your perspectives on gender equality and representation in society,
+                        with a particular emphasis on the tech industry. Your responses will help us
+                        gauge your assessment of gender balance in leadership roles, pay equity,
+                        and support systems for women and people of color.
+                    </h4>
             </li>
             <li>
-                <h4>Race and Gender in Tech Companies:
-                    This section explores your views on the role of tech companies in addressing
-                    racial and gender disparities. Your responses will help us understand your
-                    expectations regarding transparency in hiring and promotion practices,
-                    corporate responsibility for diversity initiatives, and investments
-                    in mitigating biases in technology.
-                </h4>
+                <h3>Race and Gender in Tech Companies:</h3>
+                    <h4>
+                        This section explores your views on the role of tech companies in addressing
+                        racial and gender disparities. Your responses will help us understand your
+                        expectations regarding transparency in hiring and promotion practices,
+                        corporate responsibility for diversity initiatives, and investments
+                        in mitigating biases in technology.
+                    </h4>
             </li>
         </ul>
         <!-- Start Survey button with a unique ID for styling -->
