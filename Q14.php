@@ -61,8 +61,17 @@
             <p><input type="radio" name="answer" value="1" /> I Strongly Disagree</p>
             <p><input type="submit" value="Continue" /></p>
         </form>
+       <?php
+            // Add the "Previous" button with a reset functionality
+            if (!empty($_POST['answer'])) {
+                echo '<form method="post" action="Q13.php">';
+                echo '<p><input type="hidden" name="user_id" value="'.$user_id.'" /></p>';
+                echo '<p><input type="submit" name="previous" value="Previous" /></p>';
+                echo '</form>';
+            }
+        ?>
     </div>
-
+    <div>
     <footer>
         <!-- Text and design from Ben Pettis Spring 2021 -->
         <p>
@@ -83,5 +92,6 @@
         <?php echo date('Y');?> <br />
         All Rights Reserved
     </footer>
+    </div>
 </body>
 </html>

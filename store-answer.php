@@ -35,6 +35,32 @@ if (isset($_POST["question"]) && isset($_POST["answer"])){
     
     // Close the query and connection since we're done with them
     $query->close();
+        
+if (isset($_POST["feedback"])) {
+    // Grab the feedback from the POST data
+    $feedback = $_POST["feedback"];
+
+    // Validate and sanitize the feedback (you may want to add more validation)
+    $feedback = htmlspecialchars($feedback);
+
+    // Prepare and execute the query to insert feedback into the database
+    $insertFeedbackQuery = $conn->prepare("INSERT INTO Final_Survey (user_id, question, answer) VALUES (?, 'Feedback', ?)");
+    
+    // Bind parameters
+    $insertFeedbackQuery->bind_param("iss", $user_id, $_POST["feedback"]);
+    
+    
+    echo '<script>showPopup("Feedback submitted successfully!");</script>';
+    
+    // Execute the query only if feedback is not an empty string
+    if (!empty($feedback)) {
+        $insertFeedbackQuery->execute();
+    }
+
+    // Close the query
+    $insertFeedbackQuery->close();
+}
+
     
     
     $conn->close();

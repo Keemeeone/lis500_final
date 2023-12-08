@@ -149,4 +149,6 @@ footer {
     padding: 10px;
     font-size: 14px;
     margin-top: auto;
+    margin-left: 100px; /* Adjust the left margin as needed */
+    margin-right: 100px; /* Adjust the right margin as needed */
 }
