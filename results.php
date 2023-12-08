@@ -10,7 +10,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=IBM+Plex+Serif&display=swap"
         rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script>
+    // Function to draw a bar chart
+    // Function to draw a bar chart
+function drawBarChart(labels, userData, avgData, containerId) {
+    var ctx = document.getElementById(containerId).getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Your Results',
+                data: userData,
+                backgroundColor: '#DDE0E0', // Set your desired color here
+                borderColor: '#FFF',
+                borderWidth: 1
+            }, {
+                label: 'Average Results',
+                data: avgData,
+                backgroundColor: '#E76C86', // Adjust color as needed
+                borderColor: '#FFF',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    display: false,
+                    beginAtZero: true,
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+</script>
 </head>
 
 <body>
@@ -41,7 +79,7 @@
 
 // To display results of all questions, Grab the user id from the POST data sent to us from previous page i.e. last form page edited e.g. q-royston.php  
 
-$user_id = $_POST["user_id"];
+$user_id = isset($_POST['user_id']) ? $_POST['user_id'] : '';
 
 // Store the answer to the previous question, if applicable
 include "store-answer.php";
@@ -71,14 +109,12 @@ $query->bind_param("i", $user_id);
 // Run our query to get the results from the database
 $query->execute();
 $results = $query->get_result();
-
-echo '<div class="result-container">';
-
-// User's results
-echo '<div class="result-box">';
-echo '<p><i><u>Your results:</u></i></p>';
+        
+$chartUserLabels = [];
+$chartUserData = [];
 while ($result = $results->fetch_assoc()) {
-	echo '<p><b>' . $result["question"] . ':</b> ' . $result["answer"] . '</p>';
+	$chartUserLabels[]= $result["question"];
+    $chartUserData[]= $result["answer"];
 }
 echo '</div>';
         
@@ -92,11 +128,13 @@ $query = $conn->prepare("SELECT question, avg(answer) as answer FROM Final_Surve
 $query->execute();
 $results = $query->get_result();
 
-// Average results
-echo '<div class="result-box">';
-echo '<p><i><u>Average results:</u></i></p>';
+// Fetch data for the bar chart
+$chartLabels = [];
+$chartData = [];
+
 while ($result = $results->fetch_assoc()) {
-	echo '<p><b>' . $result["question"] . ':</b> ' . $result["answer"] . '</p>';
+    $chartLabels[] = $result["question"];
+    $chartData[] = $result["answer"];
 }
 echo '</div>';
 
@@ -112,16 +150,28 @@ $conn->close();
 ?>
 
 <body>
-    <h1>!!!NEED TO EDIT HERE AND ADD ANALYSIS PAGES!!!</h1>
-    <h2>This results page shows averages. Here are some important questions to ask now: </h2>
+        <h2>Results Chart</h2>
+    <canvas id="comparisonChart" width="100" height="50"></canvas>
 
-    <ul>
-        <li>What does this data mean? </li>
-        <li>What does that tell you? </li>
-        <li>Is this the best way to display results? </li>
-        <li>How can we display this information more usefully? </li>
-    </ul>
-    <h3>We'll tackle this in Assignment # 5 </h3>
+    <script>
+        // Call the drawBarChart function to display the bar chart
+		drawBarChart(
+        <?php echo json_encode($chartLabels); ?>,
+        <?php echo json_encode($chartUserData); ?>,
+        <?php echo json_encode($chartData); ?>,
+        'comparisonChart'
+    	);    
+    </script>
+        
+        
+    <h2>Feedback</h2>
+    <form action="submit_feedback.php" method="post">
+        <label for="feedback"></label>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+        <br>
+        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+        <input type="submit" value="Submit Feedback">
+    </form>
 
     </p>
     <form action="index.php">
