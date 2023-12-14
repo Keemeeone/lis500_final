@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Perceptions of the Harvard Implicit Bias test | LIS 500 Assignment 4</title>
+    <title>Results</title>
     <link rel="stylesheet" type="text/css" href="resultStyles.css">
 
     <!-- Import the Google Fonts: -->
@@ -56,7 +56,7 @@ function drawBarChart(labels, userData, avgData, containerId) {
 
     <p>Below you will the results for all questions displayed in their Likert numerals and an average of all current
         test takers.
-        <br>Since no personal IP address data is taken in this form, if you take again the average will shift. <br>This is nothing like a statistically accurate survey, but it is a good model for your final projects.
+        <br>Since no personal IP address data is taken in this form, if you take again the average will shift.
     </p>
 
     <h2> As a reminder, here's your Likert scale:</h2>
