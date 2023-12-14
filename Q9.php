@@ -43,7 +43,7 @@
         include "store-answer.php";
 
         // Specify the question text to be displayed on this page
-        $question_text = "9.Tech companies have a responsibility to promote gender equality in their workforce.";
+        $question_text = "9. Tech companies have a responsibility to promote gender equality in their workforce.";
 
         // Use the question text and the user id to create a form for this question that will take us to the next question OR the results page, whichever should come next:
 
